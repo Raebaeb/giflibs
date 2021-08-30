@@ -53,19 +53,27 @@ https://api.giphy.com/v1/gifs/search?api_key=94ZQzjNYZlMRHizPP8lN40b6kDQyL1Rt&q=
 
 ## Priority Matrix
 
-Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.  Link this image in a similar manner to your wireframes
+Check uploaded files! 
 
 ## Timeframes
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| HTML/Basic CSS | H | 3hrs|  |  |
-| Add MadLibs | H | 1.5hrs|  |  |
-| Creating Form | H | 3hrs|  |  |
-| API Work | H | 3hrs|  |  |
+| Style Boilerplate | L | 2hrs|  |  |
+| Create Logo | L | 0.75hrs|  |  |
+| Navbar w/ Logo and github link | L | 1hrs|  |  |
+| How-To Page | L | 3hrs|  |  |
+| Post MVP Transitions | M | 2hrs|  |  |
+| Post MVP Animated Rainbow styling | M | 2hrs|  |  |
+| Import Madlibs | M | 1hrs|  |  |
+| Event Listeners | M | 2hrs|  |  |
+| Store API responses for use in finished story | M | 2hrs|  |  |
 | API responses => DOM elements | H | 3hrs|  |  |
-| Completed Story Template | H | 3hrs|  |  |
-| Total | H | 16.5hrs|  |  |
+| Structuring API Calls | H | 3hrs|  |  |
+| Testing | H | 3hrs|  |  |
+| Style Finished Story w/ Inline GIFs | H | 2hrs|  |  |
+| Structuring API Calls | H | 3hrs|  |  |
+| Total | H | 29.75hrs|  |  |
 
 ## Code Snippet
 
