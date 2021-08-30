@@ -35,7 +35,9 @@ https://api.giphy.com/v1/gifs/search?api_key=94ZQzjNYZlMRHizPP8lN40b6kDQyL1Rt&q=
 
 ## Wireframes
 
-Check wireframe assets folder!
+![giflibs-mobile-wireframes](https://user-images.githubusercontent.com/36183361/131377410-265f45a5-cd94-4e62-ad17-8c4981ea54af.png)
+![giflibs-wireframes](https://user-images.githubusercontent.com/36183361/131377462-09d3bac7-d0ce-4bfd-bb1b-9e348c1a7a85.png)
+
 
 #### MVP 
 
@@ -57,11 +59,12 @@ Include a full list of features that have been prioritized based on the `Time an
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | HTML/Basic CSS | H | 3hrs|  |  |
+| Add MadLibs | H | 1.5hrs|  |  |
 | Creating Form | H | 3hrs|  |  |
-| Creating Form | H | 3hrs|  |  |
+| API Work | H | 3hrs|  |  |
 | API responses => DOM elements | H | 3hrs|  |  |
-| Styling the completed story  | H | 3hrs|  |  |
-| Total | H | 6hrs|  |  |
+| Completed Story Template | H | 3hrs|  |  |
+| Total | H | 16.5hrs|  |  |
 
 ## Code Snippet
 
