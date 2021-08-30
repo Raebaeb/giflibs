@@ -35,8 +35,9 @@ https://api.giphy.com/v1/gifs/search?api_key=94ZQzjNYZlMRHizPP8lN40b6kDQyL1Rt&q=
 
 ## Wireframes
 
-![giflibs-wireframes](https://user-images.githubusercontent.com/36183361/131378789-e2844fdf-c026-4b4e-a845-8622f770efca.png)
-![giflibs-mobile-wireframes](https://user-images.githubusercontent.com/36183361/131378931-22606533-0edb-4355-8405-f830dacbd8e1.png)
+![giflibs-wireframes](https://user-images.githubusercontent.com/36183361/131379158-9050687a-76dc-40de-9023-98325876fb2c.png)
+
+![giflibs-mobile-wireframes](https://user-images.githubusercontent.com/36183361/131379138-afb7b50f-dde2-46ea-9118-b13283a117b2.png)
 
 
 #### MVP 
