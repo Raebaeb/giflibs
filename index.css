@@ -4,37 +4,56 @@ body {
     background-color: black;
     font-family: Arial, Helvetica, sans-serif;
     display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 100px repeat(12, 1fr);
     margin: 0;
-    padding: 0;
+    padding: 0; 
+    
 }
-button {
+button, #submit-button {
     font-size: 30px;
     font-weight: 600;
     color: white;
     background-color: transparent;
-    border: 4px solid white;
+    box-shadow: 5px 5px, -5px -5px;
     border-radius: 10px;
+    border: hidden;
     height: 100px;
     width: 300px;
 }
-button:hover {
+button, #submit-button:hover {
     cursor: pointer;
     color: black;
     background-color: white;
+    border: 4px solid black;
+    border-radius: 10px;
+}
+form {
+    display: flex;
+    flex-wrap: wrap;
+}
+header {
+    grid-column: 1 / span 12;
+    grid-row: 1 / 2;
 }
 nav {
     display: flex;
-    justify-content: flex-end;
     padding: 10px 20px;
+}
+nav h1 {
+    font-size: 50px;
+    letter-spacing: 3px;
+    margin: 0;
+}
+nav a {
+    margin-left: auto;
 }
 a:hover {
     cursor: pointer;
 }
 
 /* CLASSES */
-.github-logo {
-    width: 50px;
-}
+
 .hero-gif {
     height: 250px;
     margin: 10px;
@@ -43,37 +62,66 @@ a:hover {
     cursor: default;
     pointer-events: none;
 }
+.github-logo {
+    width: 50px;
+}
 .instructions {
     font-size: 50px;
     margin: 10px;
     width: 75vw;
     text-align: center;
 }
+.title {
+    text-transform: uppercase;
+    font-size: 150px;
+    margin: 50px;
+    background: linear-gradient(to right, #e44d2b, #29ffbb, #6c2dea);
+    -webkit-background-clip: text;
+    color: transparent;
+
+}
+.word-input {
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+    border-radius: 4px;
+    margin: 10px;
+}
 
 /* IDS */
 
 #big-libs {
-    font-family: 'Neucha', cursive;
+    font-family: 'Neucha', Arial, Helvetica, sans-serif;
     letter-spacing: 10px;
+}
+#nav-libs {
+    font-family: 'Neucha', Arial, Helvetica, sans-serif;
 }
 #hero-gif-container {
     max-height: 500px;
     margin-bottom: 250px;
+    grid-row: 4 / 6;
+    grid-column: 2 / 5;
+    display: flex;
+    justify-content: center;
 }
 #hero-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    height: 700px;
+    grid-column: 1 / span 12;
+    grid-row: 2 / span 6;
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 2fr) 1fr;
+    grid-template-rows: repeat(5, 1fr);
     box-sizing: border-box;
-    height: 1200px;
 }
 #hit-me-container {
-    margin: 100px;
+    margin: 80px;
 }
 #hit-me-container p {
     text-align: center;
 }
 #how-to-section {
+    grid-column: 1 / span 12;
+    grid-row: 8 / span 6;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -82,18 +130,30 @@ a:hover {
 #how-to-section h1 {
     font-size: 200px;
     margin: 50px;
+    text-align: center;
     background: linear-gradient(to right, #e44d2b, #29ffbb, #6c2dea);
     -webkit-background-clip: text;
     color: transparent;
 }
+#input-container {
+    grid-column: 1 / span 12;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
 #main-logo {
-    font-size: 300px;
-    height: 400px;
-    padding-top: 150px;
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    grid-column: 2 / 5;
+    grid-row: 1 / 4;
 }
 #main-logo h1 {
+    font-size: 300px;
+    height: 300px;
     margin: 0;
-    line-height: 500px;
+    align-self: flex-end;
 }
 #start-button {
 
@@ -101,7 +161,11 @@ a:hover {
 #step-one {
     display: flex;
     width: 60vw;
+    max-height: 300px;
 }
 #step-one p {
     align-self: center;
+}
+#submit-button {
+    
 }
