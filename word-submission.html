@@ -12,10 +12,12 @@
     <script defer src="index.js"></script>
     <title>GIFLIBS</title>
 </head>
-<body>
+<body onload="createInputs()">
     <header>
         <nav>
-            <h1>GIF<span id="nav-libs">LIBS</span></h1>
+            <a href="index.html" class="home-link">
+                <h1>GIF<span id="nav-libs">LIBS</span></h1>
+            </a>
             <a href="https://github.com/Raebaeb/giflibs">
                 <img class="github-logo" src="img-assets/github-green.png" alt="github repository link">
             </a>
@@ -23,9 +25,14 @@
     </header>
     <container id="input-container">
         <h1 class="title">STORY TITLE</h1>
-        <form>
-            <input id="submit-button" type="submit" value="LET'S DO THIS">
+        <form> 
+            <button id="submit-button" type="click">LET'S DO THIS</button>
         </form>
-    </container>    
+    </container>
+    <main>
+        <div id="story-container">
+            
+        </div>
+    </main>
 </body>
 </html>
