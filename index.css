@@ -39,11 +39,7 @@ header {
     grid-row: 1 / 2;
 }
 main {
-    grid-column: 1 / span 12;
-    grid-row: 2 / span 12;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    display: flex;
 }
 nav {
     display: flex;
@@ -117,6 +113,9 @@ a:hover {
 #nav-libs {
     font-family: 'Neucha', Arial, Helvetica, sans-serif;
 }
+#giflib-paragraph {
+    display: hidden;
+}
 #hero-gif-container {
     max-height: 500px;
     margin-bottom: 250px;
@@ -184,4 +183,7 @@ a:hover {
 }
 #step-one p {
     align-self: center;
+}
+#story-container {
+    display: none;
 }

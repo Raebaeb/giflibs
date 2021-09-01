@@ -44,31 +44,38 @@ const form = document.querySelector("form");
 const storyTitle = document.querySelector(".title");
 const startButton = document.querySelector("#start-button");
 const submitButton = document.querySelector("#submit-button");
-const madlib = {};
+const inputContainer = document.querySelector("#input-container")
+const storyContainer = document.querySelector("#story-container");
+const allInputs = document.getElementsByTagName("input");
+const story = document.querySelector("#giflib-paragraph")
+let allInputValues = [];
+let gifArray = [];
+let giflib = {};
 const availMadlibs = [madlib1, madlib2, madlib3];
 
 // Create inputs and attach to form element
+function renderStory() {
+    story.innerText = giflib.content;
+    storyContainer.append(story);
+};
 
 function createInputs() {
-    madlib = availMadlibs.shift();
-    madlib.words.forEach((word) => {
+    giflib = availMadlibs.shift();
+    giflib.words.forEach((word) => {
         const newInput = document.createElement("input");
         newInput.type = "text";
         newInput.className = "word-input";
         newInput.value = "";
         newInput.placeholder = word;
+        newInput.required = true;
         form.append(newInput)
     })
     form.append(submitButton);
-    storyTitle.innerText = madlib.title
-}
+    storyTitle.innerText = giflib.title
+    renderStory();
+};
 
-// ==> JS for render-story.html <==
-const inputContainer = document.querySelector("#input-container")
-const storyContainer = document.querySelector("#story-container");
-const allInputs = document.getElementsByTagName("input");
-const allInputValues = [];
-// Collect array of input values to run through fetchGifs()
+// Collect array of input values to run through fetchGifs() and hide form
 
 function inputValueArray() {
     Array.prototype.forEach.call(allInputs, input => {
@@ -77,48 +84,26 @@ function inputValueArray() {
     form.style.display = "none";
 }
 
-// Promise.all(allInputValues);
-// Add gifs to madlib object and element.replace("____", gif) in order from top to bottom of the story
-const gifArray = [];
-const testArray = ["one", "two", "three"];
-function fetchGifs(array) {
+async function fetchGifs(array) {
     for (let i = 0; i < array.length; i++) {
-        async function apiCaller(word) {
-            try {
-                const response = await axios.get(`https://api.giphy.com/v1/gifs/random?api_key=94ZQzjNYZlMRHizPP8lN40b6kDQyL1Rt&    tag=${word}&rating=g`);
-                console.log(response);
-                gifArray.push(response.data.data.embed_url);
-            } catch (error) {
-                console.error(error)
-            }
-        }
-        apiCaller();
-        
+                gifArray.push(await axios.get(`https://api.giphy.com/v1/gifs/random?api_key=94ZQzjNYZlMRHizPP8lN40b6kDQyL1Rt&tag=${array[i]}&rating=g`));
     }
 };
-fetchGifs(testArray);
-console.log(gifArray);
-const renderStory = (madlib) => {
-    madlib.content
+// Add gifs to madlib object and element.replace("____", gif) in order from top to bottom of the story
 
-
-    const story = document.createElement("p")
-    story.innerText = madlib.content;
-    storyContainer.append(story);
+function renderGifs(array) {
+    array.forEach((item) => {
+        story.innerText.replace("____", `<img src=${item}>`)
+        console.log(item);
+})
 }
-renderStory();
-
+//Event listner
 submitButton.addEventListener("click", (event) => {
-    inputValueArray();
     event.preventDefault();
-});
-/* 
-const data = {
-    location: 'your loc',
-    temp: 59
-}
+    inputValueArray();
+    fetchGifs(allInputValues);
+    Promise.all(gifArray).then((data) => {
+        console.log(data);
+    }).catch(err =>console.error(err))
+    });
 
-if(data.temp > 60) {
-    document.body.classlist = "add your class with specific color" .hot {background: red}
-}else if(){}
-*/
