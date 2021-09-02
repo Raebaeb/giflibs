@@ -1,4 +1,3 @@
-
 // Store Madlibs as objects with title and content keys
 // Turn Madlib into DOM element
 // Create input form with word prompts 
@@ -42,14 +41,13 @@ const madlib3 = {
 };
 const form = document.querySelector("form");
 const storyTitle = document.querySelector(".title");
-const startButton = document.querySelector("#start-button");
+const startButton = document.querySelector(".start-button");
 const submitButton = document.querySelector("#submit-button");
 const inputContainer = document.querySelector("#input-container")
 const storyContainer = document.querySelector("#story-container");
 const allInputs = document.getElementsByTagName("input");
 const story = document.querySelector("#giflib-paragraph")
 let allInputValues = [];
-let gifArray = [];
 let giflib = {};
 const availMadlibs = [madlib1, madlib2, madlib3];
 
@@ -84,26 +82,31 @@ function inputValueArray() {
     form.style.display = "none";
 }
 
-async function fetchGifs(array) {
+function fetchGifs(array) {
+    let gifArray = [];
     for (let i = 0; i < array.length; i++) {
-                gifArray.push(await axios.get(`https://api.giphy.com/v1/gifs/random?api_key=94ZQzjNYZlMRHizPP8lN40b6kDQyL1Rt&tag=${array[i]}&rating=g`));
+                gifArray.push(axios.get(`https://api.giphy.com/v1/gifs/random?api_key=94ZQzjNYZlMRHizPP8lN40b6kDQyL1Rt&tag=${array[i]}&rating=g`));
     }
+    return gifArray;
 };
+    
 // Add gifs to madlib object and element.replace("____", gif) in order from top to bottom of the story
-
-function renderGifs(array) {
-    array.forEach((item) => {
-        story.innerText.replace("____", `<img src=${item}>`)
-        console.log(item);
+function renderGifs(embedArray) {
+    embedArray.forEach((embedUrl) => {
+        story.innerHTML = story.innerHTML.replace("____", `<iframe src=${embedUrl} class="giphy-link"></iframe>`);
+        storyContainer.style.display = "flex";
 })
 }
 //Event listner
 submitButton.addEventListener("click", (event) => {
     event.preventDefault();
     inputValueArray();
-    fetchGifs(allInputValues);
-    Promise.all(gifArray).then((data) => {
-        console.log(data);
+    const gifs = fetchGifs(allInputValues);
+    Promise.all(gifs).then((responses) => {
+        const embeds = responses.map((response) => {
+            return response.data.data.embed_url
+        });
+        renderGifs(embeds);
+        console.log(story.innerHTML)
     }).catch(err =>console.error(err))
     });
-
