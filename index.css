@@ -55,6 +55,7 @@ nav h1 {
 a {
     margin-left: auto;
     text-decoration: none;
+    color: white;
 }
 a:visited {
     color: white;
