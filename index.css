@@ -67,7 +67,6 @@ input:focus {
 background-image: linear-gradient(to right, var(--blue), var(--green), var(--yellow), var(--red), var(--purple), var(--blue)) 0 round;
 }
 
-
 /* CLASSES */
     
 .giphy-link {
@@ -172,10 +171,6 @@ background-image: linear-gradient(to right, var(--blue), var(--green), var(--yel
     width: 50vw;
     margin: 0 auto;
 }
-#loading-bar span {
-    height: 20px;
-    width: 30vw;
-}
 #main-logo {
     display: flex;
     justify-content: center;
@@ -246,13 +241,11 @@ background-image: linear-gradient(to right, var(--blue), var(--green), var(--yel
     height: 0;
 }
 
-
 @keyframes slide {
     to {
         background-position:20vw;
     }
 }
-
 /* Media Queries */
 
 @media only screen and (max-width: 425px) {
