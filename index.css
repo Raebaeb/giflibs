@@ -30,7 +30,6 @@ form {
 header {
     grid-column: 1 / span 12;
     grid-row: 1 / 2;
-
 }
 
 main {
@@ -40,6 +39,9 @@ main {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(11, 1fr);
+}
+main {
+    padding-bottom: 20px;
 }
 nav {
     display: flex;
@@ -106,7 +108,6 @@ background-image: linear-gradient(to right, var(--blue), var(--green), var(--yel
 .word-input {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
-    border: 2px solid transparent;
     border-radius: 4px;
     margin: 10px;
     height: 38px;
@@ -228,7 +229,8 @@ background-image: linear-gradient(to right, var(--blue), var(--green), var(--yel
     max-height: 300px;
 }
 #step-one p {
-    align-self: center;
+    margin: 0;
+    align-self: flex-end;
 }
 #story-container {
     grid-column: 1 / span 6;
@@ -244,8 +246,6 @@ background-image: linear-gradient(to right, var(--blue), var(--green), var(--yel
     height: 0;
 }
 
-/* ARROW CSS */
-
 
 @keyframes slide {
     to {
@@ -253,3 +253,109 @@ background-image: linear-gradient(to right, var(--blue), var(--green), var(--yel
     }
 }
 
+/* Media Queries */
+
+@media only screen and (max-width: 425px) {
+    body {
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        max-width: 100vw;
+        margin: 0;
+        padding: 0; 
+    }
+    nav {
+        padding: 10px 20px;
+        box-sizing: border-box;
+        width: 100vw;
+    }
+
+
+    .giphy-link {
+        pointer-events: none;
+        max-width: 280px;
+    }
+    .instructions {
+        font-size: 20px;
+    }
+    .title {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 50px;
+    }
+    .word-input {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 15px;
+        border-radius: 4px;
+        margin: 5px;
+        height: 30px;
+        width: 150px;
+    }
+
+    #giflib-paragraph {
+        font-size: 25px;
+        line-height: 40px;
+    }
+    #hero-gif-container {
+        display: none;
+    }
+    #hero-section {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        padding-top: 20px;
+        height: 370px;
+    }
+    #hit-me-container {
+
+    }
+    #hit-me-container p {
+        margin: 0 auto 18px 0;
+    }
+    #how-to-section {
+        grid-column: 1 / 1;
+        grid-row: 4 / 6;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #how-to-section h1 {
+        font-size: 50px;
+        margin-bottom: 20px;
+    }
+    #input-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-content: center;
+        width: 90vw;
+        margin: 0 auto;
+    }
+    #main-logo {
+
+    }
+    #main-logo h1 {
+        font-size: 210px;
+        margin: 0;
+        line-height: 180px;
+        text-align: center;
+        display: flex;
+        align-self: flex-start;
+        flex-direction: column;
+    }
+    #big-libs {
+        font-size: 190px;
+        letter-spacing: 5px;
+    }
+    #step-one {
+        display: flex;
+        flex-wrap: wrap;
+        width: 80vw;
+    }
+    #step-one p {
+        margin: 30px 10px 0 10px;
+    }
+    #story-container {
+        overflow-y: scroll;
+        height: 500px;
+    }
+}
